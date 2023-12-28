@@ -1,0 +1,822 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* inicio codigo general */
+.contenedor{
+    width: 90%;
+    margin: auto;
+}
+.elementos{
+    display: flex;
+    flex-direction: row;
+}
+
+.separador{
+    margin: 100px auto;
+}
+
+.informacion{
+    margin: 50px auto;
+    text-align: center;
+}
+.informacion .titulo{
+    font-size: 50px;
+    color:  #2A2626;
+    margin-bottom: 20px;
+}
+
+.informacion .subtitulo{
+    font-size: 20px;
+    color: rgb(88, 81, 81);
+}
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+}
+.card{
+    width: 380px;
+    padding: 80px 20px;
+    text-align: center;
+    box-shadow: 0px 0px 12px 3px rgba(118, 109, 245, 0.26);
+    cursor: pointer;
+    transition: box-shodow .5s;
+    margin-bottom: 20px;
+}
+.card2{
+    display: flex;
+    flex-direction: row;
+    flex-basis: 30%;
+    
+}
+
+
+.card .icon{
+    font-size: 60px;
+    color: rgba(46, 45, 81, 0.623)
+}
+.card .titulo{
+    font-family:'Roboto', sans-serif;
+    margin: 20px 0px;
+    color: #2A2626;
+}
+
+.card .descripcion{
+    font-family:'Roboto', sans-serif;;
+    color: rgb(85, 91, 95);
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 12px 3px rgba(24, 13, 152, 0.26);
+    transition: .5s ease-in;
+}
+
+.boton{
+    text-decoration: none;
+    padding: 20px 30px;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border: 1px solid rgb(63, 63, 170);
+    background-color: #011155;
+    cursor: pointer;
+    transition: .4s ease-in;
+}
+.boton:hover{
+    color: rgb(63, 63, 170);
+    background-color: white;
+    transition: .4s ease-in;
+}
+/* fin codigo general */
+
+
+/* inicio de porque elegirnos */
+.contenedor1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.contenedor1 .txt{
+    margin-left: 10px;
+    padding-right: 60px;
+    margin-top: 10px;
+}
+
+.contenedor1 .imagen{
+    max-width: 100%;
+    overflow:  hidden;
+    flex-basis: calc(90% - 1rem);
+    position: relative;
+}
+
+.imagen img{
+    transition: transform 0.4s ease;
+}
+.imagen:hover img{
+    transform: scale(1.05);
+}
+.contenedor1 ul li{
+    font-size: 25px;
+    margin-bottom: 15px;
+    text-align: justify;
+    flex-basis: calc(10% );
+}
+
+@media screen and (max-width: 768px){
+    .contenedor1 {
+        flex-direction: column;
+        align-items: center;
+    }
+    ul{
+        margin-bottom: 15px;
+    }
+}
+
+/* fin de porque elegirnos */
+
+/* inicio de menu_general header */
+
+
+
+header  a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #E17101;
+    position: static;
+    bottom: -5px;
+    left: 100%;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+header  a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+.oculto{
+    padding: 0;
+    width: 0;
+    transition: all .3s;
+}
+
+.visible{
+    padding: 14px;
+    width: 140px;
+    transition:  all .3s;
+}
+
+
+/** otro prueba **/
+header{
+    background-color:  rgba(0, 0, 0, 0.6);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+}
+
+header  li{
+    list-style: none;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+header a:hover{
+    color: #bdb6b6;
+}
+
+header{
+    position: relative;
+    padding: 0 3em;
+}
+
+.navbar {
+    width: 100%;
+    height: 120px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo img{
+    font-size: 1;
+    font-weight: bold;
+    width: 300px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+.navbar .logo img:hover{
+    transform: scale(1.05);
+
+ }  
+.navbar .link {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar .toggle_btn {
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    width: 0px;
+}
+/** DROPDOWN MENU **/
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 80px;
+    height: 0;
+    width: 270px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 200px;
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/** Responsivo **/
+@media screen and (max-width: 992px){
+    .navbar .link{
+        display: none;
+    }
+    
+
+    .navbar .toggle_btn{
+        display: block;
+    }
+
+    .dropdown_menu{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .dropdown_menu{
+        left: 2rem;
+        width: unset;
+    }
+}
+
+
+
+
+
+
+
+
+/*inicio css seccion principal */
+.principal_fondo{
+    padding-top: 200px;
+    background-image: linear-gradient(rgba(29, 30, 32, 0.466),rgba(15, 15, 16, 0.534)),url("../images/c2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: -160px;
+}
+
+.principal .detalles_principal{
+    width: 80%;
+}
+
+.principal .detalles_principal .cotitulo{
+    color: white;
+    font-size: 27px;
+    padding-bottom: 30px;
+}
+
+.principal .detalles_principal .titulo{
+    color: white;
+    font-size: 50px;
+    width: 650px;
+    padding-bottom: 30px;
+}
+@media screen and (max-width: 768px){
+    .principal .detalles_principal .titulo{
+        font-size: 35px;
+        width: auto;
+    }
+}
+.principal .detalles_principal .subtitulo{
+    font-size: 27px;
+    color: white;
+    padding-bottom: 20px;
+}
+.principal .botones_contacto{
+    width: 45px;
+    padding: 30px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.principal .detalles_principal .boton{
+    padding: 20px 50px;
+    color: white;
+    background-color: #011155;
+    outline: none;
+    border: 2px solid white;
+    cursor: pointer;
+    margin-right: 35px;
+    transition: .4s ease-in;
+    font-size: 15px;
+}
+.principal .detalles_principal .boton:hover{
+    color: white;
+    border: 1ps solid white;
+    background-color: transparent;
+    transition: .4s ease-in ;
+}
+
+.principal .detalles_principal button a{
+    text-decoration: none;
+    color: wheat;
+}
+/* fin css seccion principal */
+
+/* inicio de seccion acerca_de */
+
+.acerca_de_fondo{
+    background-color: #E17101;
+    padding: 30px 0px;
+}
+.acerca_de{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.acerca_de .info{
+    width: 60%;
+    padding: 20px 0px;
+    text-align: left;
+}
+.acerca_de .info .titulo{
+    font-size: 35px;
+    color: #fff;
+}
+.acerca_de .info .descripcion{
+    font-size: 20px;
+    text-align: justify;
+    padding: 35px 0px;
+    color: white;
+}
+.acerca_de .imagen img{
+    width: 500px;
+}
+@media only screen and (max-width: 768px) {
+    .acerca_de .imagen img{
+       width: 350px;
+       margin-top: 40px;
+       margin-left: 30px;
+    }
+
+    .acerca_de .info .descripcion,
+    .acerca_de .info .titulo{
+        margin-left: 100px;
+        text-align: center;
+    }
+
+    .acerca_de .info .boton{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+}
+
+/* fin de seccion acerca_de */
+
+
+
+/* inicio seccion comentario */
+.comentarios_fondo{
+    background-color: rgb(145, 186, 223);
+}
+.comentarios .informacion .titulo{
+    padding-top: 100px;
+    color: #2A2626;
+}
+.comentarios .usuario{
+    text-align: center;
+}
+.comentarios .usuario .imagen{
+    width: 150px;
+    height: 150px;
+    border-radius: 80px;
+    border: 3px solid rgb(114, 183, 243);
+    margin-bottom: 40px; 
+}
+
+.comentarios .usuario .descripcion{
+    font-size: 35px;
+    color: #393838;
+    padding-bottom: 20px;
+}
+
+.comentarios .usuario .nombre{
+    font-size: 30px;
+    color: #333;
+    padding: 22px 0px 12px;
+}
+
+.comentarios .usuario .cargo{
+    font-family: Arial, Helvetica, sans-serif;
+    color: gray;
+    font-size: 20px;
+}
+
+.comentarios .botones{
+    padding-top: 26px;
+    text-align: center;
+}
+
+.comentarios .botones span{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin: 0px auto 40px;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.comentarios .botones .activo{
+    background-color: #333;
+    cursor: pointer;
+}
+
+.comentarios{
+    margin-bottom: 0;
+}
+/* fin seccion comentarios */
+
+
+/* inicio seccion marca */
+.marcas_fondo{
+    background-color: #E17101;
+}
+.marcas .elementos{
+    height: 140px;
+    justify-content: space-between;
+    align-items: center;
+}
+.marcas .titulo{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 25px;
+    color: #bdb6b6;
+}
+.marcas .elementos .item{
+    font-size:90px;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    perspective: 1000px;
+}
+.marcas .elementos .itemc img{
+    cursor: pointer;
+    width: 160px;
+    perspective: 1000px;
+}
+@media screen and (max-width: 768px){
+    .marcas .elementos .item{
+        width: 50px;
+        font-size: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+    .marcas .elementos .itemc img{
+        width: 60px;
+        font-size: 50px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@keyframes openDoor {
+    0%{
+        transform: rotateY(0deg);
+    }
+    100%{
+        transform: rotateY(-360deg);
+    }
+}
+
+.item img,
+.itemc img{
+    transform-style: preserve-3d;
+    transition: transform 2s ease;
+}
+
+.item:hover img,
+.itemc:hover img{
+    transform: rotateY(-360deg);
+}
+/* fin seccion marcas */
+
+/* inicio seccion contacto */
+.contacto_fondo{
+  background-color: #2A2626;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    padding: 100px 0px;
+}
+
+.contacto .informacion .titulo,
+.contacto .informacion .subtitulo{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.contacto .elementos{
+    width: 70%;
+    margin: auto;
+    justify-content: space-between;
+}
+.contacto .medioscontacto{
+    color: white;
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 22px;
+}
+
+.contacto .medioscontacto .titulo,
+.contacto .redes_sociales .titulo{
+    font-size: 30px;
+    margin-bottom: 32px;
+}
+.contacto .medioscontacto address .direccion{
+    font-size: 18px;
+    margin: 32px 0px;
+}
+.contacto address i{
+    margin-right: 15px;
+}
+
+.contacto .medioscontacto address .numero, .email{
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.contacto .redes_sociales .icons{
+    width: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/** formulario **/
+
+.contacto_fondo .contacto form{
+    background-color: #312f2f;
+}
+
+form{
+    padding: 50px 55px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    text-align: center;
+    width: 550px;
+    background-color: #333;
+}
+form h2{
+    color: white;
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea{
+    background-color: white;
+    padding: 20px 14px;
+    margin-bottom: 25px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+::placeholder{
+    color: black;
+    font-size: 15px;
+}
+
+:focus{
+    outline: 2px solid #f5f857;
+}
+
+.btn{
+    background-color: #ed8925;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #ff7301;
+}
+
+@media screen and (max-width: 991px){
+    .contacto_fondo .contacto form{
+        padding: 30px;
+    }
+    form{
+        width: 300px;
+    }
+    .contacto_fondo .elementos{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+}
+/* fin de seccion contacto */
+
+
+/* inicio seccion pie de pagina */
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    background-color: #333;
+    padding: 60px 10%;
+}
+
+ul{
+    list-style: none;
+}
+
+.footer-col{
+    width: 25%;
+}
+
+.footer-col h4{
+    position: relative;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 22px;
+    color: #E17101;
+    text-transform: capitalize;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    background-color: #27c0ac;
+    height: 2px;
+    width: 40px;
+}
+
+ul li:not(:last-child){
+    margin-bottom: 8px;
+}
+
+ul li a{
+    display: block;
+    font-size: 19px;
+    text-transform: capitalize;
+    color: #bdb6b6;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+ul li a:hover{
+    color: white;
+    padding-left: 2px;
+}
+
+.links a{
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    color: white;
+    background-color: rgba(40, 130, 214, 0.8);
+    margin: 0 8px 8px 0;
+    text-align: center;
+    line-height: 44px;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.links a:hover{
+    color: #E17101;
+    background-color: white;
+}
+
+.footer-col p{
+    color: #bdb6b6;
+    text-align: center;
+    margin-left: -100px;
+    padding-left: -100px;
+    padding-right: 80px;
+    font-size: 17px;
+}
+
+@media screen and (max-width: 740px){
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .footer-col h4::before{
+        all: unset;
+    }
+
+    .footer-col p{
+        justify-content: center;
+        margin-left: 30px;
+    }
+}
+
+@media  screen and (max-width: 555px){
+    .footer-col{
+        width: 100%;
+    }
+}
+/* fin seccion pie de pagina */
+
+
+/* inicio seccio0n derechos*/
+.derechos{
+    height: 80px;
+    color: gray;
+    text-align: center;
+    background-color: #393838;
+    line-height: 80px;
+}
+.derechos .ele{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+.derechos .ele p,
+.derechos .ele ul,
+.derechos .ele li{
+    display: inline-block;
+    color: white;
+}
+.derechos .ele a{
+    text-decoration: none;
+    color: white;
+}
+.derechos .flotante{
+    position: fixed;
+    bottom: 0px;
+    right: 40px;
+}
+.derechos .flotante i{
+    background-color: blueviolet;
+    color: white;
+    padding: 16px 18px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: border-radius .3s;
+    border-radius: 5px;
+}
+.derechos .flotante i:hover{
+    border-radius: 50%;
+    border: none;
+}
+
+/* fin seccion derechos */
